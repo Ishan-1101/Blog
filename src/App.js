@@ -2,10 +2,10 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Card from "./components/Card";
+import Home from "./components/Home";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Contact from "./components/Contact";
 
 const App = () => {
   return (
@@ -20,14 +20,22 @@ const App = () => {
               <Nav.Link as={Link} to="/blogs">
                 Blogs
               </Nav.Link>
-              <Nav.Link as={Link} to="/contact">
-                Contact
+              <Nav.Link href="https://ishansharma.herokuapp.com/">
+                Portfolio
               </Nav.Link>
             </Nav>
           </Container>
         </Navbar>
 
         <Routes>
+
+        <Route
+            path="/"
+            element={
+              <Home />
+            }
+          />
+
           <Route
             path="/blogs"
             element={
@@ -41,7 +49,6 @@ const App = () => {
               />
             }
           />
-          <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>
     </div>
