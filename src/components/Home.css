@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
+/* 
 .home-content {
   position: relative;
   text-align: center;
@@ -33,4 +33,69 @@
   transform: translate(-50%, -50%);
   background-color: hsla(0, 0%, 96%, 0.021);
   border-radius: 1rem;
+} */
+
+.grid-container {
+  margin: 0;
+  font-family: "Montserrat Alternates", sans-serif;
+  min-height: 78vh;
+  display: grid;
+  grid-template-areas:
+    "header ...... ......"
+    "about  about  logo  "
+    "footer footer footer";
+}
+p{
+  font-size:1.25rem;
+  line-height:1.5;
+}
+@media only screen and (max-width: 770px) {
+  .grid-container {
+    grid-template-areas:
+      "header ...... logo"
+      "about  about  about  "
+      "footer footer footer";
+  }
+  p{
+    font-size: 1rem;
+  }
+}
+
+header {
+  grid-area: header;
+}
+
+.about {
+  grid-area: about;
+}
+
+.logo {
+  grid-area: logo;
+  color: hsl(0, 0%, 100%);
+}
+.logo img{
+  width: 20vw;
+  aspect-ratio: 2/1.5;
+}
+@media only screen and (max-width: 440px) {
+  .logo img{
+    width: 30vw;
+  }
+  p{
+        line-height: 1.2;
+  }
+}
+
+footer {
+  background-color:rgb(248,249,250);
+  grid-area: footer;
+  text-align:center;
+}
+
+
+header,
+.about,
+.logo,
+footer {
+  padding: 2em;
 }
